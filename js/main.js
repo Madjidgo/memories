@@ -6,8 +6,10 @@ var tabR = [];
 var count = 0;
 var count1 = document.getElementById('count');
 var joueur = prompt("Entrez votre nom:").toUpperCase();
- 
- 
+
+// name player
+
+count1.innerHTML = "AZUL"+ " " +joueur;
 
 // parcourir et retourner les img au click
 
@@ -20,14 +22,14 @@ for (let i = 0; i < imgCache.length; i++) {
 
 		if(tabR.length===2){
 			// retourne carte en 1 tps donné
-			setTimeout(fComp,1000)};
+			setTimeout(fComp,700)};
+      // count
 
-			// count
+      imgCache[i].addEventListener('click',fCount);
+      function fCount (){
+        count1.innerHTML= joueur +" a utilisé: " +" "+ count++ + " "+"coups";
+      }
 
-			imgCache[i].addEventListener('click',fCount);
-	function fCount (){
-		count1.innerHTML= joueur +" a utilisé: " +" "+ count++ +"coups";
-		}
 	}
 }
 // function comparer les img
@@ -44,15 +46,13 @@ function fComp(){
 
 			}
 
+
 		}
 		// vider le tab
 		tabR=[];
 	}
 }
 
-  
+
 
 // reset
-
-
-
